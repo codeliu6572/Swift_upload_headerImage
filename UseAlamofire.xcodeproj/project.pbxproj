@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		60AF9A27EAC4467C7A8F779B /* Pods_UseAlamofireTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1D101DBEE5020B011DF8CB6 /* Pods_UseAlamofireTests.framework */; };
 		682E37371D3CB02A0084C351 /* fire.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 682E37361D3CB02A0084C351 /* fire.jpg */; };
+		682E37391D3CD0C20084C351 /* 1.gif in Resources */ = {isa = PBXBuildFile; fileRef = 682E37381D3CD0C20084C351 /* 1.gif */; };
 		686855F11D38C2720070030E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 686855F01D38C2720070030E /* AppDelegate.swift */; };
 		686855F31D38C2720070030E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 686855F21D38C2720070030E /* ViewController.swift */; };
 		686855F61D38C2720070030E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 686855F41D38C2720070030E /* Main.storyboard */; };
@@ -39,6 +40,7 @@
 
 /* Begin PBXFileReference section */
 		682E37361D3CB02A0084C351 /* fire.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = fire.jpg; sourceTree = "<group>"; };
+		682E37381D3CD0C20084C351 /* 1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 1.gif; sourceTree = "<group>"; };
 		686855ED1D38C2720070030E /* UseAlamofire.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UseAlamofire.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		686855F01D38C2720070030E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		686855F21D38C2720070030E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 			children = (
 				686855F01D38C2720070030E /* AppDelegate.swift */,
 				686855F21D38C2720070030E /* ViewController.swift */,
+				682E37381D3CD0C20084C351 /* 1.gif */,
 				682E37361D3CB02A0084C351 /* fire.jpg */,
 				686855F41D38C2720070030E /* Main.storyboard */,
 				686855F71D38C2720070030E /* Assets.xcassets */,
@@ -283,6 +286,7 @@
 				686855FB1D38C2720070030E /* LaunchScreen.storyboard in Resources */,
 				682E37371D3CB02A0084C351 /* fire.jpg in Resources */,
 				686855F81D38C2720070030E /* Assets.xcassets in Resources */,
+				682E37391D3CD0C20084C351 /* 1.gif in Resources */,
 				686855F61D38C2720070030E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

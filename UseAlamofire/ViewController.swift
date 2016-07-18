@@ -11,9 +11,18 @@ import Alamofire.Swift
 class ViewController: UIViewController , UIImagePickerControllerDelegate,
 UINavigationControllerDelegate{
 
+    let imageView = UIImageView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        imageView.image = UIImage(named: "fire.jpg")
+        imageView.frame = CGRectMake(0, 0, 150, 150)
+        imageView.center = self.view.center
+        imageView.layer.masksToBounds = true
+        imageView.layer.cornerRadius = 150 / 2
+        imageView.userInteractionEnabled = true
+        self.view.addSubview(imageView)
         
 //        self.loadData()
     }
@@ -155,6 +164,8 @@ UINavigationControllerDelegate{
                     case .Success(let upload, _, _):
                         upload.responseJSON(completionHandler: { (response) in
                             print(response)
+                            self.imageView.image = UIImage(data: data!)
+
                         })
                     case .Failure(let encodingError):
                         print(encodingError)
