@@ -1,6 +1,8 @@
 # Swift_upload_headerImage
 Swift上传头像，拍照上传
 
+博客地址：http://blog.csdn.net/CodingFire/article/details/51943286
+
 图片效果如下：
 
 ![image](https://github.com/codeliu6572/Swift_upload_headerImage/blob/master/UseAlamofire/1.gif)
