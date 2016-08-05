@@ -143,21 +143,27 @@ UINavigationControllerDelegate{
             
             //图片保存的路径
             //这里将图片放在沙盒的documents文件夹中
-            let DocumentsPath:String = NSHomeDirectory().stringByAppendingString("Documents")
             
+            //Home目录
+            let homeDirectory = NSHomeDirectory()
+            let documentPath = homeDirectory + "/Documents"
             //文件管理器
-            let fileManager = NSFileManager.defaultManager()
-            
+            let fileManager: NSFileManager = NSFileManager.defaultManager()
             //把刚刚图片转换的data对象拷贝至沙盒中 并保存为image.png
-            try! fileManager.createDirectoryAtPath(DocumentsPath, withIntermediateDirectories: true, attributes: nil)
-            fileManager.createFileAtPath(DocumentsPath + "/image.png", contents: data, attributes: nil)
-            
+            do {
+                try fileManager.createDirectoryAtPath(documentPath, withIntermediateDirectories: true, attributes: nil)
+            }
+            catch let error {
+            }
+            fileManager.createFileAtPath(documentPath.stringByAppendingString("/image.png"), contents: data, attributes: nil)
             //得到选择后沙盒中图片的完整路径
-            let filePath = DocumentsPath + "/image.png"
-            
+            let filePath: String = String(format: "%@%@", documentPath, "/image.png")
+            print("filePath:" + filePath)
             Alamofire.upload(.POST, "http://192.168.3.16:9060/client/updateHeadUrl", multipartFormData: { multipartFormData in
-
-                multipartFormData.appendBodyPart(data: data!, name: "image")
+                let lastData = NSData(contentsOfFile: filePath)
+                
+                multipartFormData.appendBodyPart(data: lastData!, name: "image")
+                
                 }, encodingCompletion: { response in
                     picker.dismissViewControllerAnimated(true, completion: nil)
                     switch response {
@@ -167,6 +173,7 @@ UINavigationControllerDelegate{
                             self.imageView.image = UIImage(data: data!)
 
                         })
+                        
                     case .Failure(let encodingError):
                         print(encodingError)
                     }
